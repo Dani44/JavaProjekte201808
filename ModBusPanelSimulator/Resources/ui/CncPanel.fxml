@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?language JavaScript?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<GridPane xmlns:fx="http://javafx.com/fxml" 
+		  fx:controller="cnc.mach4.panel.ui.controller.CncPanelController">
+		  
+<HBox>  
+	<VBox fx:id="vboxPanel"
+		  layoutX="5.0" 
+		  layoutY="5.0" 
+		  prefHeight="450.0" 
+		  prefWidth="350.0" 
+		  spacing="5" 
+		  xmlns:fx="http://javafx.com/fxml/1" 
+		  xmlns="http://javafx.com/javafx/2.2">
+	  
+		  <HBox fx:id="hboxSpindle" spacing="30" styleClass="horizontalbuttonHBox">
+		  
+			  <Button text="CW"   fx:id="btnSpindleCW" onAction="#handleBtnSpindleCW" styleClass="greenPushButton"/>
+			  <Button text="Stop" fx:id="btnSpindleStop" onAction="#handleBtnSpindleStop" styleClass="redPushButton"/>
+			  <Button text="CCW"  fx:id="btnSpindleCCW" onAction="#handleBtnSpindleCCW" styleClass="greenPushButton"/>
+			  <Button text="0"  fx:id="btnSpindleSpeed" onAction="#handleBtnSpindleSpeed" />			  
+	      
+	      </HBox>
+
+
+
+
+		  <HBox fx:id="hboxMotion" spacing="30" styleClass="horizontalbuttonHBox">
+		    <VBox>
+			  	<fx:define>
+	    			<ToggleGroup  fx:id="x001" />
+	    		</fx:define>    
+	    		<children>
+	    			<RadioButton text="Axis B" toggleGroup="$x001" fx:id="rbAxis5"/>	    			
+	    			<RadioButton text="Axis A" toggleGroup="$x001" fx:id="rbAxis4"/>
+		    		<RadioButton text="Axis Z" toggleGroup="$x001" fx:id="rbAxis3"/>
+	    			<RadioButton text="Axis Y" toggleGroup="$x001" fx:id="rbAxis2"/>
+    				<RadioButton text="Axis X" toggleGroup="$x001" fx:id="rbAxis1"/>
+	    			<RadioButton text="N/A"    toggleGroup="$x001" fx:id="rbAxis0"/>    				
+	    		</children>      
+		  	</VBox>
+		  	
+		  	<VBox>
+			  	<fx:define>
+	    			<ToggleGroup  fx:id="x002" />
+	    		</fx:define>    
+	    		<children>
+	    			<RadioButton text="Fast"   toggleGroup="$x002" fx:id="rbIncrement5"/>
+	    			<RadioButton text="1.0"    toggleGroup="$x002" fx:id="rbIncrement4"/>
+		    		<RadioButton text="0.5"    toggleGroup="$x002" fx:id="rbIncrement3"/>
+	    			<RadioButton text="0.1"    toggleGroup="$x002" fx:id="rbIncrement2"/>
+	    			<RadioButton text="0.01"   toggleGroup="$x002" fx:id="rbIncrement1"/>	    			
+	    			<RadioButton text="0.005"  toggleGroup="$x002" fx:id="rbIncrement0"/>
+	    		</children>      
+		  	</VBox>
+		  	
+		  	<VBox spacing="15">
+		  		<HBox spacing="30">
+					<Button text="Ref"   fx:id="btnOpRef" onAction="#handleBtnOpRef" styleClass="silverPushButton"/>
+					<Button text="Home"   fx:id="btnOpHome" onAction="#handleBtnOpHome" styleClass="silverPushButton"/>
+				</HBox>
+		  		<HBox spacing="30">
+					<Button text="Ctrl"   fx:id="btnCtrl" onAction="#handleBtnCtrl" styleClass="btnCtrlFalse"/>
+				</HBox>
+				
+		  	</VBox>
+		  	
+	      </HBox>
+	
+		  <HBox fx:id="hboxCycle" spacing="30" styleClass="horizontalbuttonHBox">
+
+				 <Button text="Start"   fx:id="btnOpStart" onAction="#handleBtnOpStart" styleClass="greenPushButton"/>
+			     <Button text="Pause"   fx:id="btnOpPause" onAction="#handleBtnOpPause" styleClass="redPushButton"/>
+
+
+
+
+		  	  	 <Slider fx:id="sldFeed"/>		  	  	 
+			  	 <Button text="Reset" fx:id="btnMachReset" onAction="#handleBtnMachReset"/>		  	  
+
+		  	  
+
+	      </HBox>
+		  <HBox fx:id="hboxOperation" spacing ="17">
+
+				 <Button text="Probe" fx:id="btnOpProbe" onAction="#handleBtnProbe" styleClass="btnMacro"/>
+			     <Button text="M1"    fx:id="btnOpMacro1" onAction="#handleBtnMacro1" styleClass="btnMacro"/>
+			     <Button text="M2"    fx:id="btnOpMacro2" onAction="#handleBtnMacro2" styleClass="btnMacro"/>
+			     <Button text="M3"    fx:id="btnOpMacro3" onAction="#handleBtnMacro3" styleClass="btnMacro"/>
+		  
+		  
+		  
+			  <Button text="Emergency" fx:id="btnMachEmergency" onAction="#handleBtnMachEmergency" />
+	      </HBox>
+	</VBox>
+	<VBox fx:id="vboxRegister" 
+		  layoutX="10.0" 
+		  layoutY="10.0" 
+		  prefHeight="250.0"
+		  prefWidth="250.0" 
+		  spacing="5" 
+		  xmlns:fx="http://javafx.com/fxml/1" 
+		  xmlns="http://javafx.com/javafx/2.2">
+		  
+		  <HBox>
+		  	<ListView fx:id="listViewCoils" items="${controller.coilList}"/>
+		    <ListView fx:id="listViewInRegs" items="${controller.inRegList}"/>
+		  </HBox>
+	  
+	
+	</VBox>
+
+
+</HBox>
+</GridPane>

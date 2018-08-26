@@ -1,0 +1,115 @@
+#vboxPanel
+,#hboxMotion
+,#hboxCycle
+,#hboxOperation
+{
+	-fx-padding: 5;
+	-fx-border-style: solid inside;
+	-fx-border-width: 2;
+	-fx-border-insets: 5;
+	-fx-border-radius: 5;
+	-fx-border-color: blue; 
+	-fx-background-color:yellow}
+	
+	
+.horizontalbuttonHBox {
+	-fx-padding: 10;
+	-fx-border-style: solid inside;
+	-fx-border-width: 2;
+	-fx-border-insets: 5;
+	-fx-border-radius: 5;
+	-fx-border-color: blue; 
+	-fx-background-color:yellow 	
+}	
+	
+#vboxRegister {
+	-fx-padding: 5;
+	-fx-border-style: solid inside;
+	-fx-border-width: 2;
+	-fx-border-insets: 5;
+	-fx-border-radius: 5;
+	-fx-border-color: green; }
+
+
+
+#btnSpindleSpeed {
+	-fx-background-color: lightgrey;
+    -fx-background-radius: 100;
+    -fx-pref-height: 50;    
+    -fx-pref-width: 50;    
+    -fx-background-insets: 0;   
+    -fx-text-fill: white;
+}
+	
+
+.redPushButton{
+	-fx-background-color: red;
+    -fx-background-radius: 100;
+    -fx-pref-height: 50;    
+    -fx-pref-width: 50;    
+    -fx-background-insets: 0;   
+    -fx-text-fill: white;
+}
+	
+.greenPushButton{
+	-fx-background-color: green;
+    -fx-background-radius: 100;
+    -fx-pref-height: 50;    
+    -fx-pref-width: 50;    
+    -fx-background-insets: 0;   
+    -fx-text-fill: white;
+}
+
+.silverPushButton{
+	-fx-background-color: green;
+    -fx-background-radius: 100;
+    -fx-pref-height: 50;    
+    -fx-pref-width: 50;    
+    -fx-background-insets: 0;   
+    -fx-text-fill: white;
+}
+
+
+.btnCtrlFalse{ -fx-background-color: orange;
+    -fx-background-radius: 100;
+    -fx-pref-height: 35;    
+    -fx-pref-width: 35;    
+    -fx-background-insets: 0;   
+    -fx-text-fill: white;
+}
+.btnCtrlTrue{ -fx-background-color: orange;
+    -fx-background-radius: 100;
+    -fx-pref-height: 35;    
+    -fx-pref-width: 35;    
+    -fx-background-insets: 0;   
+    -fx-text-fill: white;
+}
+
+
+.btnMacro
+{ -fx-background-color: orange;
+  -fx-background-radius: 100;
+  -fx-pref-height: 40;    
+  -fx-pref-width: 40;    
+  -fx-background-insets: 0;   
+  -fx-text-fill: white; 	
+}
+
+
+#btnMachEmergency {
+	-fx-background-color: linear-gradient(#ff5400, #be1d00);
+    -fx-background-radius: 100;
+    -fx-pref-height: 75;
+    -fx-pref-width: 75;        
+    -fx-background-insets: 0;   
+    -fx-text-fill: white;}
+    	
+#btnMachReset {
+	-fx-background-color: linear-gradient(#ff5400, #be1d00);
+    -fx-background-radius: 100;
+    -fx-pref-height: 50;    
+    -fx-pref-width: 50;    
+    -fx-background-insets: 0;   
+    -fx-text-fill: white;}
+	    	
+    		

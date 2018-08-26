@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.Tab?>
+
+<TabPane fx:id="tabPane" 
+	fx:controller="cnc.mach4.panel.ui.controller.PanelController" 
+	xmlns="http://javafx.com/javafx/8.0.40"
+    xmlns:fx="http://www.w3.org/2001/XInclude">
+
+    <tabs>
+        <Tab fx:id="cncPanelTabPage" text="CNC Panel" closable="False">
+			 <fx:include source="CncPanel.fxml" fx:id="cncpanel" />
+        </Tab>
+        
+        <Tab fx:id="modbusViewPage" text="Modbus" closable="False">
+
+        </Tab>
+        
+        <Tab fx:id="modbusSetupPage" text="Holding Register" closable="False">
+			 <fx:include source="InputRegister.fxml" fx:id="inputregtab" />
+        </Tab>
+
+    </tabs>
+
+</TabPane>

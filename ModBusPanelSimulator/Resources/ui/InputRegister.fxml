@@ -1,0 +1,20 @@
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<GridPane xmlns:fx="http://javafx.com/fxml" 
+		  alignment="CENTER" 
+		  fx:controller="cnc.mach4.panel.ui.controller.InputRegisterListViewController">
+    
+    <Label fx:id="lblInputRegister" text="InputRegister" GridPane.rowIndex="0"/>
+    
+    <ListView items="${controller.inputRegisterList}" fx:id="listViewHoldingRegister" GridPane.rowIndex="1"/>
+	
+	<Button fx:id="btnRefresh" text="Refresh Registers"
+	 	    onAction="#handleButtonAction" 
+			contentDisplay="CENTER" textAlignment="CENTER" GridPane.rowIndex="2" />
+</GridPane>
