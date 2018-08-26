@@ -1,0 +1,69 @@
+<div class="grid-navigation-top">
+
+	<div class="btn-group" uib-dropdown>
+		<button id="split-button" type="button"
+			uib-dropdown-toggle 
+			class="btn btn-default btn-sm">
+			<span class="glyphicon glyphicon-cog"></span>
+		</button>
+
+		<ul class="dropdown-menu" uib-dropdown-menu role="menu"
+			aria-labelledby="split-button">
+			<li role="menuitem"><a ng-click="saveState()">Save
+					Settings</a></li>
+			<li role="menuitem"><a ng-click="restoreState()">Restore
+					Settings</a></li>
+			<li role="menuitem"><a ng-click="resetState()">Reset
+					Settings</a></li>
+					
+		</ul>
+	</div>
+
+	<button type="button" class="btn btn-default btn-sm"
+		ng-click="loadData()" uib-tooltip="Refresh data from server">
+		<span class="glyphicon glyphicon-refresh"></span>
+	</button>
+
+	<button type="button" class="btn btn-default btn-sm"
+		ng-click="toggleFiltering()" uib-tooltip="Filter On/Off">
+		<span class="glyphicon glyphicon-filter"></span>
+	</button>
+
+	<button type="button" class="btn btn-success btn-sm"
+		ng-click="createNewRecipe( false )"
+		uib-tooltip="Create a new recipe">
+		<span class="glyphicon glyphicon-plus"></span>
+	</button>
+
+	<button type="button" class="btn btn-success btn-sm"
+		ng-click="createNewRecipe( true )"
+		uib-tooltip="Create a clone of this recipe"
+		ng-show="gridApi.selection.getSelectedRows().length == 1">
+		<span class="glyphicon glyphicon-duplicate"></span>
+	</button>
+
+
+
+	<button class="btn btn-danger btn-sm" ng-click="deleteRows('recipe')"
+		ng-show="gridApi.selection.getSelectedRows().length > 0"
+		uib-tooltip="Delete selected row">
+		<span class="glyphicon glyphicon-trash"></span>
+	</button>
+
+<!-- 				<button class="btn btn-info btn-sm" ng-click="testFunc()"> -->
+<!-- 					<span>Test Funktion</span> -->
+<!-- 				</button> -->
+
+
+</div> <!-- grid-navigation-top -->
+<div ui-grid="gridOptions" 
+	 ui-grid-auto-resize
+	 ui-grid-selection 
+	 ui-grid-edit 
+	 ui-grid-save-state 
+	 ui-grid-grouping
+	 ui-grid-exporter
+	 ui-grid-row-edit 
+	 ui-grid-cellNav 
+	 class="grid-container">	
+</div>

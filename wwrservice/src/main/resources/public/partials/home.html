@@ -1,0 +1,28 @@
+<style>
+	.home-panel{
+		width: 300px;		
+		margin-left: auto;
+		margin-right: auto;		
+	}
+</style>
+
+
+<div class="app-container-home">
+	<div class="panel panel-info form-group-login home-panel" show-errors>
+		<div class="panel-heading">Home</div>
+		<div class="panel-body">
+			<div ng-show="authenticated">
+				<h3>Welcome</h3>
+				<h4>{{user.name}}</h4>
+				<a href="#/recipies/" ng-click="navCollapsed = true">Recipies</a>			
+			</div>
+	
+			<div ng-show="!authenticated">
+				<h3>Please Log in ...</h3>
+				<button class="btn btn-primary" ng-click="nav.logout()">login</button>
+			</div>
+			
+	      </p>
+		</div>
+	</div>
+</div>

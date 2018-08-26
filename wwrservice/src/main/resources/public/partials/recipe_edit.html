@@ -1,0 +1,172 @@
+<div class="panel panel-info">
+
+	<div class="panel-heading">Recipe {{rec.id}}</div>
+
+
+	<div class="panel-body">
+
+		<form name="recipeForm" novalidate>
+
+			<div id="editRecipe">
+
+				<div class="row row-form-first"
+					ng-class="{ 'has-error': recipeForm.caliber.$invalid }">
+
+					<label class="col-sm-3 control-label" for="caliber">Caliber</label>
+					<div class="input-group-sm col-sm-9">
+						<input type="text" class="form-control" name="caliber"
+							ng-model="rec.caliber" required placeholder="Caliber" />
+					</div>
+
+				</div>
+
+				<div class="row row-form">
+					<div class="form-group-sm"
+						ng-class="{ 'has-error': recipeForm.powderShortName.$invalid }">
+						<label class="col-sm-3 control-label col-form-label"
+							for="powderShortName">Powder</label>
+						<div class="col-sm-3 input-group-sm"">
+							<input type="text" class="form-control" name="powderShortName"
+								ng-model="rec.powderShortName" required
+								placeholder="Powder Type" />
+						</div>
+					</div>
+
+
+					<div class="form-group-sm"
+						ng-class="{ 'has-error': recipeForm.powderMfg.$invalid }">
+						<label class="col-sm-3 control-label col-form-label"
+							for="powderMfg">Powder Mfg</label>
+						<div class="col-sm-3 input-group-sm">
+							<input type="text" class="form-control" name="powderMfg"
+								ng-model="rec.powderMfg" required placeholder="Powder Mfg" />
+						</div>
+					</div>
+				</div>
+
+				<div class="row row-form">
+					<div class="form-group-sm"
+						ng-class="{ 'has-error': recipeForm.powderLoad.$invalid }">
+						<label class="col-sm-3 control-label col-form-label"
+							for="powderLoad">Charge</label>
+						<div class="col-sm-3 input-group-sm"">
+							<input type="number" class="form-control" name="powderLoad"
+								ng-model="rec.powderLoad" required placeholder="Charge"
+								min="0.1" max="150" step="0.1" />
+						</div>
+					</div>
+				</div>
+
+
+				<div class="row row-form">
+					<div class="form-group-sm"
+						ng-class="{ 'has-error': recipeForm.bulletType.$invalid }">
+						<label class="col-sm-3 control-label col-form-label"
+							for="bulletType">Bullet Type</label>
+						<div class=" col-sm-3 input-group-sm">
+							<input type="text" class="form-control" name="bulletType"
+								ng-model="rec.bulletType" required placeholder="Bullet Type" />
+						</div>
+					</div>
+					<div class="form-group-sm"
+						ng-class="{ 'has-error': recipeForm.bulletMfg.$invalid }">
+						<label class="col-sm-3 control-label col-form-label"
+							for="bulletMfg">Bullet Mfg</label>
+						<div class="col-sm-3 input-group-sm">
+							<input type="text" class="form-control" name="bulletMfg"
+								ng-model="rec.bulletMfg" required placeholder="Bullet Mfg" />
+						</div>
+					</div>
+
+				</div>
+
+				<div class="row row-form">
+					<div class="form-group-sm"
+						ng-class="{ 'has-error': recipeForm.bulletDia.$invalid }">
+						<label class="col-sm-3 control-label col-form-label"
+							for="bulletDia">Bullet Dia</label>
+						<div class="col-sm-3 input-group-sm">
+							<input type="number" class="form-control" name="bulletDia"
+								ng-model="rec.bulletDia" required placeholder="Bullet Dia"
+								min="0.1" max="1.5" />
+						</div>
+					</div>
+
+					<div class="form-group-sm"
+						ng-class="{ 'has-error': recipeForm.bulletWeight.$invalid }">
+						<label class="col-sm-3 control-label col-form-label"
+							for="bulletWeight">Weight</label>
+						<div class="col-sm-3 input-group-sm">
+							<input type="number" class="form-control" name="bulletWeight"
+								ng-model="rec.bulletWeightGrains" required
+								placeholder="Bullet Weight" min="10" max="1500" />
+						</div>
+					</div>
+				</div>
+
+				<div class="row row-form">
+					<div class="form-group-sm"
+						ng-class="{ 'has-error': recipeForm.oalmm.$invalid }">
+						<label class="col-sm-3 control-label col-form-label" for="oalmm">OAL
+							mm</label>
+						<div class="col-sm-3 input-group-sm">
+							<input type="number" class="form-control" name="oalmm"
+								ng-model="rec.oalmm" required placeholder="OAL mm" min="10"
+								step="0.1" ng-change="oalMm2Inch()" max="200" />
+						</div>
+					</div>
+
+					<div class="form-group-sm"
+						ng-class="{ 'has-error': recipeForm.oalInches.$invalid }">
+						<label class="col-sm-3 control-label col-form-label"
+							for="oalInches">OAL Inch</label>
+						<div class="col-sm-3 input-group-sm">
+							<input type="number" class="form-control" name="oalInches"
+								ng-model="rec.oalInches" required placeholder="OAL Inches"
+								ng-change="oalInch2Mm()" step="0.01" min="0.8" max="6" />
+						</div>
+					</div>
+				</div>
+
+				<div class="row row-form">
+					<div class="form-group-sm"
+						ng-class="{ 'has-error': recipeForm.primerType.$invalid }">
+						<label class="col-sm-3 control-label col-form-label"
+							for="primerType">Primer</label>
+						<div class="col-sm-3 input-group-sm">
+							<input type="text" class="form-control" name="primerType"
+								ng-model="rec.primerType" required placeholder="Primer" />
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<label class="col-sm-3 control-label col-form-label" for="note">Note</label>
+					<div class="form-group-sm"
+						ng-class="{ 'has-error': recipeForm.note.$invalid }">
+
+
+						<div class="input-group-sm col-sm-9">
+
+							<textarea class="form-control" rows="3" placeholder="Note"
+								class="form-control" name="note" ng-model="rec.note">
+								        		  </textarea>
+
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+		</form>
+	</div>
+
+
+	<div class="panel-footer panel-info">
+		<button ng-disabled="recipeForm.$invalid"
+			class="btn btn-success btn-sm" type="button" ng-click="ok()">Save</button>
+		<button class="btn btn-warning btn-sm" type="button"
+			ng-click="cancel()">Cancel</button>
+	</div>
+
+</div>

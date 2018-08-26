@@ -1,0 +1,35 @@
+<div class="grid-navigation-top">
+
+	<button type="button" class="btn btn-success btn-sm"
+		uib-tooltip="Create a new Review"
+		ng-click="createNewReview( false )">
+		<span class="glyphicon glyphicon-plus"></span>
+	</button>
+
+	<button type="button" class="btn btn-success btn-sm"
+		ng-click="createNewReview( true )"
+		uib-tooltip="Create a new copy of this Review"
+		ng-show="gridApiReview.selection.getSelectedRows().length == 1">
+		<span class="glyphicon glyphicon-duplicate"></span>
+	</button>
+
+	<button class="btn btn-danger btn-sm" ng-click="deleteRows('review')"
+		uib-tooltip="Delete this Review"
+		ng-show="gridApiReview.selection.getSelectedRows().length > 0">
+		<span class="glyphicon glyphicon-trash"></span>
+	</button>
+
+</div> <!-- grid-navigation-top -->
+
+<div class="grid-container-lot"
+	 ui-grid="gridOptionsReview"
+	 ui-grid-auto-resize 
+	 ui-grid-selection 
+	 ui-grid-edit 
+	 ui-grid-save-state 
+	 ui-grid-grouping
+	 ui-grid-exporter
+	 ui-grid-row-edit 
+	 ui-grid-cellNav >
+</div>
+

@@ -1,0 +1,254 @@
+<div class="panel panel-info">
+
+	<div class="panel-heading">Review {{rev.id}}</div>
+
+
+	<div class="panel-body">
+		<form name="reviewForm" novalidate>
+
+			<uib-tabset active="active"> 
+		
+				<div class="row row-form">
+		
+					<div class="form-group-sm" ng-class="{ 'has-error': reviewForm.date.$invalid }">
+						<label class="col-sm-2 control-label" for="date">Shot at</label>
+						<div class="input-group-sm col-sm-4">
+							<input type="date" class="form-control" name="date" required
+								placeholder="dd.MM.yyyy" ng-model="rev.date"/>
+						</div>
+					</div>
+				
+					<div class="form-group-sm" ng-class="{ 'has-error': reviewForm.gun.$invalid }">
+						<label class="col-sm-2 control-label" for="gun">Gun</label>
+						<div class="input-group-sm col-sm-4">
+							<input type="text" class="form-control" name="gun" required
+								placeholder="Gun" ng-model="rev.gun" />
+						</div>
+					</div>
+	
+				</div>
+					
+
+		
+				<uib-tab index="0" heading="Rating">
+
+					<div id="editRecipeBatches" style="margin-top: 10px">
+						<table style="width:100%">
+							<tr>
+							<td style="width:500px;">
+								<div class="row row-form" ng-class="{ 'has-error': reviewForm.reliability.$invalid }">
+									<label class="col-sm-3 control-label" for="casebrand">Reliability</label>
+						
+									<div class="input-group-sm col-sm-5">
+				        				<span uib-rating ng-model="rev.reliability" 
+				        					  max="max" on-hover="hoveringOver(value)" 
+				        					  on-leave="overStar = null">
+				        				</span>
+									</div>
+								</div>
+				
+								<div class="row row-form" ng-class="{ 'has-error': reviewForm.accuracy.$invalid }">
+									<label class="col-sm-3 control-label" for="casebrand">Accuracy</label>
+									<div class="input-group-sm col-sm-5">
+				        				<span uib-rating ng-model="rev.accuracy" 
+				        					  max="max" on-hover="hoveringOver(value)" 
+				        					  on-leave="overStar = null">
+				        				</span>
+									</div>
+								</div>
+			
+								<div class="row row-form" ng-class="{ 'has-error': reviewForm.power.$invalid }">
+									<label class="col-sm-3 control-label" for="power">Power</label>
+									<div class="input-group-sm col-sm-5">
+				        				<span uib-rating ng-model="rev.power" 
+				        					  max="max" on-hover="hoveringOver(value)" 
+				        					  on-leave="overStar = null">
+				        				</span>
+									</div>
+								</div>
+			
+				
+								<div class="row row-form" ng-class="{ 'has-error': reviewForm.burn.$invalid }">
+									<label class="col-sm-3 control-label" for="burn">Burning</label>
+									<div class="input-group-sm col-sm-5">
+				        				<span uib-rating ng-model="rev.burn" 
+				        					  max="max" on-hover="hoveringOver(value)" 
+				        					  on-leave="overStar = null">
+				        				</span>
+									</div>
+								</div>
+								<div class="row row-form" ng-class="{ 'has-error': reviewForm.summary.$invalid }">
+									<label class="col-sm-3 control-label" for="burn">Summary</label>
+									<div class="input-group-sm col-sm-5">
+				        				<span uib-rating ng-model="rev.summary" 
+				        					  max="max" on-hover="hoveringOver(value)" 
+				        					  on-leave="overStar = null">
+				        				</span>
+									</div>
+								</div>
+								</td>
+								
+							</tr>
+							<tr>
+							
+								<td>
+									 <div >
+									    <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+									      <div uib-slide ng-repeat="atta in rev.attachments track by atta.sequence" index="atta.sequence">
+									        <img ng-src="{{atta.url}}" style="margin:auto; max-height:300px; max-width:100%" >
+										      <div class="carousel-caption">
+	          										<p>{{atta.description}}</p>
+	        								  </div>
+									      </div>
+									    </div>
+									  </div>
+	
+
+								</td>
+							</tr>
+						</table>
+					</div>
+				</uib-tab>
+				
+				<uib-tab index="1" heading="Components">
+					<div id="editRecipeBatches" style="margin-top: 10px">
+					<div class="row row-form" ng-class="{ 'has-error': reviewForm.casebrand.$invalid }">
+						<label class="col-sm-3 control-label" for="casebrand">Case Brand</label>
+						<div class="input-group-sm col-sm-5">
+							<input type="text" class="form-control" name="casebrand" 
+								placeholder="Case Brand" ng-model="rev.casebrand" />
+						</div>
+					</div>
+					<div class="row row-form" ng-class="{ 'has-error': reviewForm.primer.$invalid }">
+						<label class="col-sm-3 control-label" for="casebrand">Primer</label>
+						<div class="input-group-sm col-sm-5">
+							<input type="text" class="form-control" name="primer" 
+								placeholder="Primer" ng-model="rev.primer" />
+						</div>
+					</div>
+					<div class="row row-form" ng-class="{ 'has-error': reviewForm.crimp.$invalid }">
+						<label class="col-sm-3 control-label" for="casebrand">Crimp</label>
+						<div class="input-group-sm col-sm-5">
+							<input type="text" class="form-control" name="crimp" 
+								placeholder="Crimp" ng-model="rev.crimp" />
+						</div>
+					</div>
+					</div>
+				</uib-tab>
+				<uib-tab index="2" heading="Range">
+					<div id="editRecipeBatches" style="margin-top: 10px">
+					<div class="row row-form" ng-class="{ 'has-error': reviewForm.location.$invalid }">
+						<label class="col-sm-3 control-label" for="casebrand">Location</label>
+						<div class="input-group-sm col-sm-5">
+							<input type="text" class="form-control" name="location" 
+								placeholder="Range/Location" ng-model="rev.location" />
+						</div>
+					</div>
+
+					<div class="row row-form" ng-class="{ 'has-error': reviewForm.distance.$invalid }">
+						<label class="col-sm-3 control-label" for="casebrand">Distance</label>
+						<div class="input-group-sm col-sm-5">
+							<input type="text" class="form-control" name="distance" 
+								placeholder="distance" ng-model="rev.distance" />
+						</div>
+					</div>
+					</div>
+				</uib-tab>
+
+				<uib-tab index="3" heading="Images">
+					<div id="editRecipeBatches" style="margin-top: 10px">
+						<div class="row row-form" ng-class="{ 'has-error': reviewForm.upload.$invalid }">
+							<label class="col-sm-2 control-label" for="casebrand">Image</label>
+							<div class="input-group-sm col-sm-8">
+								<input type="file" 
+									   accept="image/*"
+									   onchange="angular.element(this).scope().fileNameChanged(this)"
+									   class="form-control" 
+									   id="file"
+									   placeholder="Image"/>
+							</div>							
+						</div>		
+						
+					  
+						
+						<div class="upload-image-container">
+							<div ng-repeat="atta in rev.attachments | orderBy:'-fileId'" class="upload-image-box">
+							
+								<table style="width:100%;">
+									<tr>
+									   <td class="upload-image-col-delete">
+											<button type="button" class="btn btn-danger btn-sm"
+												ng-click="deletePicture(atta.sequence)" 
+												uib-tooltip="Delete this picture">
+												<span class="glyphicon glyphicon-trash"></span>
+											</button>
+									   
+									   </td>
+									  
+									    <td class="upload-image-col-image">
+											<img ng-src="{{atta.url}}" class="upload-image">
+										</td>
+										<td class="upload-image-col-desc">
+											<div>
+											    <textarea ng-model="atta.description"
+											    		  placeholder="Image description"
+													  	  style="width:100%; height: 100px;">
+												 </textarea>
+											</div>
+										</td>
+									</tr>
+								</table>
+
+							</div>
+						</div>
+
+
+<!-- 				<span ng-repeat="atta in rev.attachments track by atta.id"> -->
+<!--   							<image src="{{atta.url}}" width="200"></image> -->
+<!-- 				</span> -->
+					    
+					</div>
+				</uib-tab>
+				
+				<uib-tab index="4" heading="Note">
+					<div id="editRecipeBatches" style="margin-top: 10px">
+						<div class="row">
+							<label class="col-sm-3 control-label col-form-label" for="revnote">
+								Review Note</label>
+							<div class="form-group-sm"
+								ng-class="{ 'has-error': reviewForm.revnote.$invalid }">
+		
+								<div class="input-group-sm col-sm-9">
+									<textarea class="form-control" rows="3" placeholder="Note"
+										class="form-control" name="revnote" ng-model="rev.note">
+									</textarea>
+								</div>
+		
+							</div>
+						</div>
+					</div>
+				</uib-tab>
+
+
+				
+			</uib-tabset>
+			
+		</form>		
+
+	</div>
+
+	<div class="panel-footer panel-info">
+		<button ng-disabled="reviewForm.$invalid" class="btn btn-success btn-sm"
+			type="button" ng-click="ok()">Save</button>
+		<button class="btn btn-warning btn-sm" type="button"
+			ng-click="cancel()">Cancel</button>
+			
+
+	</div>
+
+
+
+</div>
+
+
+

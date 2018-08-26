@@ -1,0 +1,30 @@
+https://code.angularjs.org/
+
+------------------------------------------------------------
+Tomcat Deploying
+------------------------------------------------------------
+In der ApplicationClass:
+	// Das vererben von SpringBootServletInitializer ist wichtig sonst geht nix
+
+	@Configuration
+	@ComponentScan
+	@EnableAutoConfiguration
+	public class Application extends SpringBootServletInitializer{
+
+    	public static void main(String[] args) {
+        	SpringApplication.run(Application.class, args);
+    	}
+    
+    	@Override
+    	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        	return application.sources(Application.class);
+    	}
+	}
+	
+
+Im POM:
+	<packaging>war</packaging>
+	
+	> cd h:\git\javaprojekte\WwrReloadingService\
+	> mvn package
+

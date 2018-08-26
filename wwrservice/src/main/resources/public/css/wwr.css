@@ -1,0 +1,186 @@
+html { height: 100%; }
+
+
+i.custom {font-size: 16px ;}
+
+
+
+body { position: absolute ;
+	   top: 50px ;
+	   bottom: 30px ;
+	   width: 100% ;
+}
+
+footer {
+	background-color: grey ;	
+	height:30px;
+	bottom:0px;
+    left:0px;
+    width:100% ;
+    position:fixed;		
+}
+
+.upload-image-container {
+	height:400px ; 
+	width:100%  ; 
+	float:left  ; 
+	overflow-y : scroll;	
+}
+
+.upload-image-box {
+	border-radius: 5px;
+    border: 1px solid;
+    padding: 5px; 
+    margin-bottom:5px;
+    width: 100%;
+}
+
+.upload-image {
+	max-width:100%;
+	max-hight:200px;
+}
+
+.upload-image-col-delete{
+	width:20px;
+	vertical-align: top;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.upload-image-col-image{
+	vertical-align: top;
+	text-align: center ;
+	width:35%;
+	padding: 5px;
+}
+
+.upload-image-col-desc{
+	width:65%;
+	vertical-align: top;
+	text-align: left;
+	padding: 5px;
+}
+
+
+
+.main-container { height: 100% ;
+				  width: 100% ;
+				  padding-left: 5px; 
+				  padding-right: 5px; 
+				  padding-top: 5px;
+				  padding-bottom: 5px;				  
+				 }
+				 
+.app-container-home{
+	margin-top: 50px ;
+	text-align: center;
+}
+				 
+				 
+
+.grid-navigation-top{
+	  padding-bottom: 5px ;
+	  border: 1px ;
+	  background-color: grey;
+	  vertical-align: middle ;
+	  padding-top: 5px;
+	  padding-left: 5px;
+      padding-bottom: 5px;				  	  
+}
+
+.row-form-first {
+    margin-top: 10px;	
+    margin-bottom: 10px;
+}
+
+.row-form {
+    margin-bottom: 10px;
+}
+
+
+.grid-container-lot { height: 350px; width: 100% ; }
+
+
+.grid-container { height: 100 vh ; width: 100% ; } 
+
+
+
+@media (min-height: 300px)  {  .grid-container { height:  175px; width: 100% ; }
+@media (min-height: 350px)  {  .grid-container { height:  225px; width: 100% ; }
+@media (min-height: 400px)  {  .grid-container { height:  275px; width: 100% ; } 
+@media (min-height: 450px)  {  .grid-container { height:  325px; width: 100% ; }
+@media (min-height: 500px)  {  .grid-container { height:  375px; width: 100% ; }
+@media (min-height: 550px)  {  .grid-container { height:  425px; width: 100% ; }
+@media (min-height: 600px)  {  .grid-container { height:  475px; width: 100% ; }
+@media (min-height: 650px)  {  .grid-container { height:  525px; width: 100% ; }
+@media (min-height: 700px)  {  .grid-container { height:  575px; width: 100% ; }
+@media (min-height: 750px)  {  .grid-container { height:  625px; width: 100% ; }
+@media (min-height: 800px)  {  .grid-container { height:  675px; width: 100% ; }
+@media (min-height: 850px)  {  .grid-container { height:  725px; width: 100% ; }
+@media (min-height: 900px)  {  .grid-container { height:  775px; width: 100% ; }
+@media (min-height: 950px)  {  .grid-container { height:  825px; width: 100% ; }
+@media (min-height: 1000px) {  .grid-container { height:  875px; width: 100% ; }
+@media (min-height: 1050px) {  .grid-container { height:  925px; width: 100% ; }
+@media (min-height: 1100px) {  .grid-container { height:  975px; width: 100% ; }
+@media (min-height: 1150px) {  .grid-container { height: 1025px; width: 100% ; }
+@media (min-height: 1200px) {  .grid-container { height: 1075px; width: 100% ; }
+@media (min-height: 1250px) {  .grid-container { height: 1125px; width: 100% ; }
+@media (min-height: 1300px) {  .grid-container { height: 1175px; width: 100% ; }
+@media (min-height: 1350px) {  .grid-container { height: 1225px; width: 100% ; }
+@media (min-height: 1400px) {  .grid-container { height: 1275px; width: 100% ; }
+
+
+
+
+
+
+
+
+
+/* @media (min-height: 640px) {  */
+/*    .main-container { height: 560px; }       */
+/*    .grid-container { height: 510px; } */
+/* } */
+    
+/* @media (min-height: 768px) { */
+/*    .main-container { height:678px;  }       */
+/*    .grid-container { height: 628px; }  */
+/* } */
+
+/* @media (min-height: 990px) { */
+/*   .main-container  { height: 900px; }       */
+/*   .grid-container  { height: 850px; } */
+/* }   */
+
+/* @media (min-height: 1024px) { */
+/*   .main-container { height: 934px; }       */
+/*   .grid-container { height: 888px; } */
+/* }   */
+
+/* @media (min-height: 1080px) { */
+/*   .main-container { height: 1000px; }       */
+/*   .grid-container { height: 950px; } */
+/* }   */
+
+
+.wwr-footer {
+	background-color: grey ;	
+	height:30px;
+	bottom:0px;
+    left:0px;
+    width:100%
+    position:fixed;	
+	
+}
+
+.starter-template {
+  padding: 10px 15px;
+  text-align: center;
+}
+
+
+.row-form {
+    margin-bottom: 10px;
+}
+
+

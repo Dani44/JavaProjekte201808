@@ -1,0 +1,32 @@
+<div class="grid-navigation-top">
+
+	<button type="button" class="btn btn-success btn-sm"
+		ng-click="createNewLot( false )">
+		<span class="glyphicon glyphicon-plus"></span>
+	</button>
+
+	<button type="button" class="btn btn-success btn-sm"
+		ng-click="createNewLot( true )"
+		ng-show="gridApiLot.selection.getSelectedRows().length == 1">
+		<span class="glyphicon glyphicon-duplicate"></span>
+	</button>
+
+	<button class="btn btn-danger btn-sm" ng-click="deleteRows('lot')"
+		ng-show="gridApiLot.selection.getSelectedRows().length > 0">
+		<span class="glyphicon glyphicon-trash"></span>
+	</button>
+
+</div> <!-- grid-navigation-top -->
+
+<div ui-grid="gridOptionsLot"
+	 ui-grid-auto-resize 
+	 ui-grid-selection 
+	 ui-grid-edit 
+	 ui-grid-save-state 
+	 ui-grid-grouping
+	 ui-grid-exporter
+	 ui-grid-row-edit 
+	 ui-grid-cellNav 
+	 class="grid-container-lot">
+</div>
+

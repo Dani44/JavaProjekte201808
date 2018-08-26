@@ -1,0 +1,130 @@
+<div ng-controller="RecipeController">
+
+
+	<!-- Lot-View-->
+	<div ng-show="activeView==1">
+			
+			<div class="panel panel-info myStyle">
+				<div class="panel-heading">
+
+						<button type="button" 
+								class="btn btn-info btn-sm"
+								uib-tooltip="Edit Recipe #{{activeRecipeRow.id}}"
+							ng-click="openRecipe(activeRecipeRow)">
+							<span class="glyphicon glyphicon-pencil"></span>
+						</button>
+
+
+						<span>Recipe {{activeRow.id}}: </span>
+						
+						<span>{{activeRecipeRow.caliber}}</span>
+						
+						<span> / </span>
+						
+						<span>{{activeRecipeRow.powderShortName}}</span>
+						<span>{{activeRecipeRow.powderLoad}} gr.</span>	
+	
+						<span> / </span>
+						
+						<span>{{activeRecipeRow.bulletMfg}}</span>
+						<span>{{activeRecipeRow.bulletType}}</span>
+						<span>{{activeRecipeRow.bulletWeightGrains}} gr.</span>					
+
+						<div style="float: right;">
+							<button type="button" 
+								    class="btn btn-warning btn-sm"
+								    uib-tooltip="Close Window, Back to Recipe overview"
+								    ng-click="activateView(0)">
+								<span class="glyphicon 	glyphicon glyphicon-off"></span>
+							</button>
+						</div>
+				</div>		
+				<div class="panel-body">
+				
+					
+					<uib-tabset active="active"> 
+						<uib-tab index="0" heading="Reviews">
+							<div ng-include="'partials/view_recipe_review_grid.html'">
+							</div>
+						</uib-tab>
+					
+						<uib-tab index="1" heading="Lots">
+							<div ng-include="'partials/view_recipe_lot_grid.html'">
+							</div>
+						</uib-tab>
+					</uib-tabset>
+
+				</div>				
+			</div>
+			
+
+	</div>
+	<!-- End Lot-View-->
+
+	<!-- Recipe grid-View-->
+	<div ng-show="activeView==0">  
+		<div ng-include="'partials/view_recipe_grid.html'">
+		</div>
+	</div>
+	<!-- end grid-View-->
+
+	<script type="text/ng-template" id="myModalRecipeEdit.html">
+		<div ng-include="'partials/recipe_edit.html'">
+		<div/>
+	</script> 
+	<script type="text/ng-template" id="myModalLotEdit.html">
+		<div ng-include="'partials/lot_edit.html'">
+		<div/>
+	</script> 
+	<script type="text/ng-template" id="myModalReviewEdit.html">
+		<div ng-include="'partials/review_edit.html'">
+		<div/>
+	</script> 
+
+
+
+	<script type="text/ng-template" id="recipe_delete_confirm.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Delete this recipe with all Reviews and lots</h3>
+        </div>
+        <div class="modal-body">
+			<h2>Delete Recipe ?</h2>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-danger btn-sm" type="button" ng-click="deleteObject()">Delete</button>
+            <button class="btn btn-warning btn-sm" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+	</script>
+
+
+	<script type="text/ng-template" id="lot_delete_confirm.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Delete this Lot</h3>
+        </div>
+        <div class="modal-body">
+			<h2>Delete Lot?</h2>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-danger btn-sm" type="button" ng-click="deleteObject()">Delete</button>
+            <button class="btn btn-warning btn-sm" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+	</script>
+
+
+	<script type="text/ng-template" id="review_delete_confirm.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Delete this Review</h3>
+        </div>
+        <div class="modal-body">
+			<h2>Delete Review?</h2>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-danger btn-sm" type="button" ng-click="deleteObject()">Delete</button>
+            <button class="btn btn-warning btn-sm" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+	</script>
+
+
+</div>
+
+

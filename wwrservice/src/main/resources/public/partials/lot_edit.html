@@ -1,0 +1,122 @@
+<div class="panel panel-info">
+
+	<div class="panel-heading">Lot {{lot.id}}</div>
+
+	<div class="panel-body">
+		<form name="lotForm" novalidate>
+
+			<div id="editRecipeBatches" style="margin-top: 10px">
+
+				<div class="row row-form"
+					ng-class="{ 'has-error': lotForm.date.$invalid }">
+					<label class="col-sm-3 control-label" for="date">Loaded at</label>
+					<div class="input-group-sm col-sm-5">
+						<input type="date" class="form-control" name="date" required
+							placeholder="dd.MM.yyyy" ng-model="lot.date"
+							placeholder="Created" />
+					</div>
+				</div>
+
+				<div class="row row-form"
+					ng-class="{ 'has-error': lotForm.casebrand.$invalid }">
+					<label class="col-sm-3 control-label" for="casebrand">Case
+						brand</label>
+					<div class="input-group-sm col-sm-5">
+						<input type="text" class="form-control" name="casebrand" required
+							ng-model="lot.casebrand" placeholder="Case Brand" />
+					</div>
+				</div>
+
+				<div class="row row-form"
+					ng-class="{ 'has-error': lotForm.primer.$invalid }">
+					<label class="col-sm-3 control-label" for="primer">Primer
+						brand</label>
+					<div class="input-group-sm col-sm-5">
+						<input type="text" class="form-control" name="primer" required
+							ng-model="lot.primer" placeholder="Primer brand" />
+					</div>
+				</div>
+				
+				<div class="row row-form">
+					<div class="form-group-sm"
+						ng-class="{ 'has-error': recipeForm.oalmm.$invalid }">
+						<label class="col-sm-3 control-label col-form-label" for="oalmm">Real OAL
+							mm</label>
+						<div class="col-sm-3 input-group-sm">
+							<input type="number" class="form-control" name="oalmm"
+								ng-model="lot.oalmm" required placeholder="OAL mm" min="10"
+								step="0.1" ng-change="oalMm2Inch()" max="200" />
+						</div>
+					</div>
+
+					<div class="form-group-sm"
+						ng-class="{ 'has-error': recipeForm.oalInches.$invalid }">
+						<label class="col-sm-3 control-label col-form-label"
+							for="oalInches">Real OAL Inch</label>
+						<div class="col-sm-3 input-group-sm">
+							<input type="number" class="form-control" name="oalInches"
+								ng-model="lot.oalInches" required placeholder="OAL Inches"
+								ng-change="oalInch2Mm()" step="0.01" min="0.8" max="6" />
+						</div>
+					</div>
+				</div>
+				
+				
+
+				<div class="row row-form"
+					ng-class="{ 'has-error': lotForm.crimp.$invalid }">
+					<label class="col-sm-3 control-label" for="primer">Crimp</label>
+					<div class="input-group-sm col-sm-5">
+						<input type="text" class="form-control" name="crimp"
+							ng-model="lot.crimp" placeholder="Crimp description" />
+					</div>
+				</div>
+
+				<div class="row row-form"
+					ng-class="{ 'has-error': lotForm.size.$invalid }">
+					<label class="col-sm-3 control-label" for="primer">Lot Size</label>
+					<div class="input-group-sm col-sm-5">
+						<input type="number" class="form-control" name="size"
+							ng-model="lot.size" placeholder="Count" min="1" />
+					</div>
+				</div>
+
+				<div class="row">
+					<label class="col-sm-3 control-label col-form-label" for="lotnote">Reloading
+						Note</label>
+					<div class="form-group-sm"
+						ng-class="{ 'has-error': lotForm.lotnote.$invalid }">
+
+
+						<div class="input-group-sm col-sm-9">
+
+							<textarea class="form-control" rows="3" placeholder="Note"
+								class="form-control" name="lotnote" ng-model="lot.note">
+							</textarea>
+
+						</div>
+
+					</div>
+				</div>
+
+
+			</div>
+			
+		</form>		
+
+	</div>
+
+
+	<div class="panel-footer panel-info">
+		<button ng-disabled="lotForm.$invalid" class="btn btn-success btn-sm"
+			type="button" ng-click="ok()">Save</button>
+		<button class="btn btn-warning btn-sm" type="button"
+			ng-click="cancel()">Cancel</button>
+	</div>
+
+
+
+</div>
+
+
+
